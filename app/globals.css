@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 15% 10%; /* Darker foreground for contrast */
+
+    --card: 255 255 255; /* Bright white */
+    --card-foreground: 210 15% 10%; /* Dark text for cards */
+
+    --popover: 255 255 255; /* Bright white for popovers */
+    --popover-foreground: 210 15% 10%; /* Dark text for popovers */
+
+    --primary: 280 60% 50%; /* Vibrant purple */
+    --primary-foreground: 255 255 255; /* White text for primary elements */
+
+    --secondary: 34 80% 60%; /* Soft teal */
+    --secondary-foreground: 255 255 255; /* White text for secondary elements */
+
+    --muted: 210 50% 96%; /* Light gray for muted text */
+    --muted-foreground: 210 15% 20%; /* Darker muted text */
+
+    --accent: 50 100% 50%; /* Bright yellow */
+    --accent-foreground: 0 0% 0%; /* Black text for accent elements */
+
+    --destructive: 0 100% 50%; /* Bright red for destructive actions */
+    --destructive-foreground: 255 255 255; /* White text for destructive actions */
+
+    --border: 214 30% 90%; /* Light border color */
+    --input: 214 30% 95%; /* Very light input background */
+    --ring: 280 60% 70%; /* Soft purple ring color */
+
+    --radius: 0.5rem; /* Consistent border radius */
+  }
+
+  .dark {
+    --background: 210 15% 10%; /* Dark background */
+    --foreground: 210 95% 95%; /* Light text for dark mode */
+
+    --card: 255 30% 15%; /* Dark card background */
+    --card-foreground: 210 95% 95%; /* Light text for cards */
+
+    --popover: 255 30% 15%; /* Dark popover */
+    --popover-foreground: 210 95% 95%; /* Light text for popovers */
+
+    --primary: 210 95% 95%; /* Light primary color */
+    --primary-foreground: 210 15% 10%; /* Dark text for primary elements */
+
+    --secondary: 34 30% 40%; /* Dark secondary color */
+    --secondary-foreground: 210 95% 95%; /* Light text for secondary elements */
+
+    --muted: 220 20% 30%; /* Muted dark gray */
+    --muted-foreground: 210 90% 70%; /* Light muted text */
+
+    --accent: 50 50% 30%; /* Darker yellow accent */
+    --accent-foreground: 210 95% 95%; /* Light text for accent elements */
+
+    --destructive: 0 70% 50%; /* Darker red for destructive */
+    --destructive-foreground: 210 95% 95%; /* Light text for destructive actions */
+
+    --border: 220 20% 20%; /* Dark border color */
+    --input: 220 20% 25%; /* Darker input background */
+    --ring: 280 70% 90%; /* Light purple ring color */
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6; /* Improve readability */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for headers */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* Additional styles for a fantasy look */
+  .button {
+    @apply bg-primary text-primary-foreground rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg;
+  }
+  .card {
+    @apply bg-card border border-border rounded-lg shadow-lg transition duration-300 ease-in-out hover:shadow-xl;
+  }
+  .popover {
+    @apply bg-popover border border-border rounded-lg p-4 shadow-md;
+  }
+}
